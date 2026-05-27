@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dein 30-Tage-KI-Begleiter — Maike Neuheisel</title>
+<meta name="description" content="30 Tage, 5 Minuten am Tag. Dein Plan von der ersten KI-Frage bis zur festen Routine. Von @maikeneuheisel.">
+<meta property="og:title" content="Dein 30-Tage-KI-Begleiter">
+<meta property="og:description" content="30 Tage, 5 Minuten am Tag. Mehr Klarheit. Weniger Chaos.">
+<meta property="og:type" content="website">
+<style>
+  @font-face { font-family: 'Oswald'; src: url('fonts/Oswald-Bold.ttf') format('truetype'); font-weight: 700; font-display: swap; }
+  @font-face { font-family: 'Inter'; src: url('fonts/Inter-Regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #FAF7F2;
+    color: #7A6E62;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  /* HERO */
+  .hero {
+    text-align: center;
+    padding: 80px 24px 60px;
+    border-bottom: 1px solid #D8C6BB;
+  }
+  .hero-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #A6A0A0;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(36px, 8vw, 56px);
+    color: #111111;
+    text-transform: uppercase;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .hero-accent { display: block; width: 60px; height: 3px; background: #C17654; margin: 20px auto; }
+  .hero-sub {
+    font-size: 17px;
+    color: #7A6E62;
+    max-width: 420px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+  .hero-statement {
+    background: #111111;
+    color: #FAF7F2;
+    padding: 28px 32px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .hero-statement strong {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .hero-statement span { font-size: 15px; color: #D8C6BB; }
+
+  /* INTRO */
+  .intro {
+    padding: 48px 0;
+    text-align: center;
+    border-bottom: 1px solid #D8C6BB;
+  }
+  .intro p { max-width: 560px; margin: 0 auto; font-size: 16px; line-height: 1.8; }
+
+  /* WEEK SECTIONS */
+  .week {
+    padding: 48px 0 24px;
+    border-bottom: 1px solid #D8C6BB;
+  }
+  .week-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  .week-bar { width: 100%; height: 3px; }
+  .week-bar--w1 { background: #C17654; }
+  .week-bar--w2 { background: #D8C6BB; }
+  .week-bar--w3 { background: #A6A0A0; }
+  .week-bar--w4 { background: #3A3530; }
+  .week-bar--bonus { background: #C17654; }
+  .week h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(22px, 5vw, 30px);
+    color: #111111;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .week-intro { font-size: 15px; color: #7A6E62; margin-bottom: 32px; line-height: 1.7; }
+
+  /* DAY CARDS */
+  .day { margin-bottom: 32px; }
+  .day-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #111111;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+  .day-title .tag-num { color: #C17654; margin-right: 6px; }
+
+  .day-section { margin-bottom: 12px; }
+  .day-section-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #111111;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .day-section p { font-size: 15px; line-height: 1.7; color: #7A6E62; }
+
+  .day-beispiel {
+    background: #F3EDE7;
+    border-left: 3px solid #C17654;
+    padding: 16px 20px;
+    margin-top: 12px;
+  }
+  .day-beispiel-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #C17654;
+    margin-bottom: 6px;
+  }
+  .day-beispiel p { font-size: 14px; line-height: 1.7; color: #7A6E62; }
+
+  .day-wichtig {
+    background: #F3EDE7;
+    border-left: 3px solid #C17654;
+    padding: 16px 20px;
+    margin-top: 12px;
+  }
+  .day-wichtig-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #C17654;
+    margin-bottom: 6px;
+  }
+  .day-wichtig p { font-size: 14px; line-height: 1.7; color: #7A6E62; }
+
+  .day-sep { border: none; border-top: 1px solid #E8E0D6; margin-top: 28px; }
+
+  /* CLOSING */
+  .closing {
+    padding: 48px 0;
+    text-align: center;
+  }
+  .closing h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 6vw, 40px);
+    color: #111111;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .closing p { max-width: 560px; margin: 0 auto 16px; font-size: 16px; line-height: 1.8; }
+  .closing-accent { display: block; width: 60px; height: 3px; background: #C17654; margin: 32px auto 20px; }
+  .closing-name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #111111;
+    text-transform: uppercase;
+  }
+  .closing-handle { font-size: 14px; color: #7A6E62; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid #D8C6BB;
+    padding: 24px 0;
+    text-align: center;
+    font-size: 13px;
+    color: #A6A0A0;
+  }
+  footer a { color: #7A6E62; text-decoration: none; }
+  footer a:hover { color: #C17654; }
+  footer .sep { margin: 0 8px; }
+
+  @media (max-width: 480px) {
+    .hero { padding: 48px 16px 40px; }
+    .hero-statement { padding: 20px 24px; }
+    .container { padding: 0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-label">Von @maikeneuheisel</div>
+  <h1>Dein 30-Tage<br>KI-Begleiter</h1>
+  <div class="hero-accent"></div>
+  <p class="hero-sub">Jeden Tag 5 Minuten. Mehr Klarheit. Weniger Chaos.</p>
+  <div class="hero-statement">
+    <strong>Deine Stimme bleibt deine.</strong>
+    <span>KI hilft dir, sie lauter zu machen.</span>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="container">
+    <p>Dieses PDF erkl&auml;rt dir zu jedem Tag, was genau du tun kannst, warum es hilft und gibt dir ein konkretes Beispiel.</p>
+  </div>
+</section>
+
+<div class="container">
+
+  <!-- WOCHE 1 -->
+  <section class="week">
+    <div class="week-bar week-bar--w1"></div>
+    <h2>Woche 1: KI endlich sinnvoll nutzen</h2>
+    <p class="week-intro">Diese Woche r&auml;umst du auf. Du schaffst Ordnung, bevor du loslegst. Das ist der wichtigste Schritt, den die meisten &uuml;berspringen.</p>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 1</span> Erstelle einen KI-Ordner auf deinem Handy.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Wenn du KI-Ergebnisse nicht findest, waren sie umsonst. Ein Ordner gibt dir einen festen Platz f&uuml;r alles, was du mit KI erarbeitest.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Erstelle in deiner Notizen-App einen Ordner namens &quot;KI&quot; oder &quot;Meine KI-Sachen&quot;. Ab jetzt speicherst du dort jeden guten Prompt, jede n&uuml;tzliche Antwort, jede Idee. Du wirst &uuml;berrascht sein, wie schnell sich das f&uuml;llt.</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>In der Apple-Notizen-App: Neuer Ordner &rarr; &quot;KI&quot; &rarr; fertig. Dauert 30 Sekunden.</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 2</span> L&ouml;sche heute 3 KI-Tools, die du nie nutzt.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Die meisten haben 5-10 KI-Apps installiert und nutzen davon vielleicht eine. Der Rest erzeugt nur schlechtes Gewissen (&quot;Ich m&uuml;sste die mal ausprobieren&quot;). Weniger Tools, mehr Fokus.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Geh durch deine Apps. Welche KI-Tools hast du installiert, aber seit Wochen nicht ge&ouml;ffnet? L&ouml;sche mindestens 3. Das befreit nicht nur Speicher, sondern auch deinen Kopf.</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>Du hast ChatGPT, Claude, Gemini, Copilot und Perplexity? Behalte die zwei, die du wirklich nutzt. Der Rest darf gehen.</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 3</span> Speichere deinen ersten guten Prompt in Notizen.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Ein guter Prompt ist wie ein gutes Rezept. Wenn du ihn nicht aufschreibst, f&auml;ngst du jedes Mal wieder bei null an.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>&Ouml;ffne dein KI-Tool und schau in deinen Chatverlauf. Welche Frage hat dir die beste Antwort gebracht? Kopiere sie in deinen KI-Ordner. Schreib dazu, wof&uuml;r du sie nutzt.</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>&quot;Formuliere diese Nachricht freundlicher, aber bestimmt: [Nachricht einf&uuml;gen]&quot; &rarr; gespeichert unter &quot;Kommunikation&quot;.</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 4</span> Frage KI nach Ideen statt nach perfekten Antworten.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Der gr&ouml;&szlig;te Fehler ist, KI wie Google zu benutzen: eine Frage, eine Antwort, fertig. KI kann viel mehr, wenn du sie als Sparringspartnerin nutzt.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Statt &quot;Schreib mir einen Instagram-Post&quot; frag lieber: &quot;Gib mir 10 Ideen f&uuml;r Instagram-Posts zum Thema [dein Thema]. Ich suche mir dann die beste aus.&quot; Du bleibst die Entscheiderin.</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>&quot;Ich bin Floristin und will auf Instagram sichtbarer werden. Gib mir 10 Post-Ideen, die zeigen, was hinter den Kulissen passiert.&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 5</span> Nutze Spracheingabe statt Tippen.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Die meisten schreiben ihre Prompts m&uuml;hsam per Hand. Dabei kannst du einfach sprechen. KI versteht in der Regel auch nat&uuml;rliche Sprache mit F&uuml;llw&ouml;rtern und Pausen.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>&Ouml;ffne dein KI-Tool und nutze die Spracheingabe. In den meisten Apps findest du ein Mikrofon- oder Schallwellen-Symbol im Eingabefeld. Sprich einfach drauflos: Was besch&auml;ftigt dich gerade? Was brauchst du? KI macht aus deinem Gedankenstrom klare S&auml;tze.</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>&quot;Hey, ich hab morgen ein Kundengespr&auml;ch und bin total nerv&ouml;s. Kannst du mir mal drei Punkte aufschreiben, die ich auf jeden Fall ansprechen sollte?&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 6</span> Lass dir eine Nachricht h&ouml;flicher formulieren.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Manche Nachrichten sind schwer zu schreiben. Eine Absage, eine Preiserh&ouml;hung, eine Grenze setzen. KI kann dir helfen, den richtigen Ton zu finden, ohne dass du eine Stunde an einem Zweizeiler sitzt.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Schreib deine Nachricht so, wie du sie denkst (auch ruppig, auch direkt), und lass KI eine freundlichere Version vorschlagen. Du entscheidest, was du &uuml;bernimmst.</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>Dein Entwurf: &quot;Ich kann den Termin nicht verschieben.&quot; &rarr; KI-Version: &quot;Ich verstehe, dass der Termin ung&uuml;nstig liegt. Leider kann ich ihn zeitlich nicht mehr &auml;ndern. Sollen wir einen neuen Termin f&uuml;r n&auml;chste Woche finden?&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 7</span> Teste heute nur ein Tool bewusst.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Nach einer Woche Aufr&auml;umen hast du jetzt einen klaren Blick. Heute gehts darum, ein einziges Tool richtig kennenzulernen statt f&uuml;nf oberfl&auml;chlich.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>W&auml;hle das Tool, das du am meisten nutzt (wahrscheinlich ChatGPT oder Claude). Stell ihm heute drei verschiedene Aufgaben. Beobachte: Was kann es gut? Wo st&ouml;&szlig;t es an Grenzen? Schreib dir das in deinen KI-Ordner.</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>Aufgabe 1: &quot;Fasse diesen Text zusammen.&quot; Aufgabe 2: &quot;Gib mir Feedback zu meiner Idee.&quot; Aufgabe 3: &quot;Erkl&auml;r mir [Thema] wie einem F&uuml;nfj&auml;hrigen.&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+  </section>
+
+  <!-- WOCHE 2 -->
+  <section class="week">
+    <div class="week-bar week-bar--w2"></div>
+    <h2>Woche 2: Weniger mentale &Uuml;berforderung</h2>
+    <p class="week-intro">Diese Woche nutzt du KI, um deinen Kopf leerer zu machen. Weniger offene Tabs, weniger kreisende Gedanken, mehr Klarheit.</p>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 8</span> Lass KI deine Gedanken als Liste strukturieren.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Wenn zu viele Gedanken gleichzeitig da sind, hilft es enorm, sie einmal rauszulassen und von KI ordnen zu lassen. Das ist wie Schreibtisch aufr&auml;umen, nur im Kopf.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Sprich oder tippe einfach alles rein, was dir gerade im Kopf rumschwirrt. Sag dann: &quot;Sortiere das bitte nach Dringlichkeit&quot; oder &quot;Mach daraus eine &uuml;bersichtliche Liste.&quot;</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>&quot;Ich muss noch die Rechnung schreiben, die Website ist nicht fertig, ich brauch Content f&uuml;r n&auml;chste Woche, und eigentlich wollte ich auch noch Sport machen.&quot; &rarr; KI sortiert nach: Heute, Diese Woche, Kann warten.</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 9</span> Frag KI: &quot;Was ist gerade wirklich wichtig?&quot;</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Manchmal sieht man vor lauter Aufgaben den Wald nicht mehr. KI kann dir helfen, die eine Sache zu identifizieren, die heute wirklich z&auml;hlt.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Beschreib KI deine aktuelle Situation und frag: &quot;Wenn ich heute nur eine einzige Sache schaffen k&ouml;nnte, welche w&uuml;rdest du empfehlen und warum?&quot;</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>&quot;Ich habe 12 Aufgaben auf meiner Liste. Welche drei haben den gr&ouml;&szlig;ten Einfluss auf mein Business diese Woche?&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 10</span> Erstelle eine Notiz: &quot;KI spart mir Zeit bei...&quot;</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Wenn du aufschreibst, wo KI dir schon geholfen hat, merkst du, dass du l&auml;ngst weiter bist als du denkst. Das motiviert und zeigt dir, wo du noch mehr abgeben kannst.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>&Ouml;ffne deinen KI-Ordner und erstelle eine neue Notiz. Schreib mindestens 3 Dinge auf, bei denen KI dir diese Woche Zeit gespart hat.</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>&quot;KI spart mir Zeit bei: Nachrichten formulieren, Ideen finden, To-Do-Listen sortieren.&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 11</span> Lass dir 3 Priorit&auml;ten f&uuml;r heute erstellen.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Ein Tag mit 15 Aufgaben f&uuml;hlt sich an wie ein Tag ohne Plan. KI kann dir helfen, aus dem Berg die drei herauszupicken, die wirklich z&auml;hlen.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Gib KI deine komplette To-Do-Liste und sag: &quot;Welche drei Aufgaben haben heute die h&ouml;chste Priorit&auml;t? Begr&uuml;nde kurz warum.&quot;</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>KI antwortet: &quot;1. Kundenangebot senden (zeitkritisch). 2. Instagram-Post planen (Konsistenz). 3. Buchhaltung (&uuml;berf&auml;llig seit 2 Wochen).&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 12</span> Nutze KI f&uuml;r eine Zusammenfassung statt 20 Tabs.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Recherche frisst Zeit. Statt 20 Artikel zu lesen, kann KI dir die wichtigsten Punkte auf einen Blick geben.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Wenn du etwas recherchierst, kopiere den l&auml;ngsten Artikel in KI und sag: &quot;Fasse mir die 5 wichtigsten Punkte zusammen. In einfacher Sprache.&quot;</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>Du willst wissen, wie der Instagram-Algorithmus 2026 funktioniert. Statt 10 Blogartikel zu lesen: Einen guten Artikel reinkopieren, KI fasst zusammen.</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 13</span> Schreibe heute eine Idee sofort auf.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Die besten Ideen kommen zwischen T&uuml;r und Angel. Wenn du sie nicht sofort festh&auml;ltst, sind sie weg. Heute &uuml;bst du, sofort zu handeln.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Sobald dir heute eine Idee kommt (egal wie klein), &ouml;ffne sofort dein KI-Tool oder deine Notizen und halte sie fest. Auch als Sprachnotiz.</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>&quot;Idee f&uuml;r einen Post: Zeigen, wie mein Morgen aussieht, wenn KI die Routine plant.&quot; Drei Sekunden, festgehalten, fertig.</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 14</span> Baue dir einen Shortcut f&uuml;r wiederkehrende Aufgaben.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Wenn du jede Woche denselben Prompt tippst, verschwendest du Zeit. Ein gespeicherter Shortcut spart dir das.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Schau in deinen KI-Verlauf: Welche Aufgabe hast du mehr als einmal gestellt? Speichere den Prompt als Template in deinem KI-Ordner. Bei manchen Tools (wie Claude) kannst du auch Projekte anlegen, in denen der Kontext gespeichert bleibt.</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>Wochenplanung-Prompt: &quot;Hier sind meine Aufgaben f&uuml;r diese Woche: [Liste]. Erstelle mir einen realistischen Wochenplan mit Pufferzeiten.&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+  </section>
+
+  <!-- WOCHE 3 -->
+  <section class="week">
+    <div class="week-bar week-bar--w3"></div>
+    <h2>Woche 3: Kreativit&auml;t &amp; Sichtbarkeit</h2>
+    <p class="week-intro">Diese Woche wirst du kreativ. Du nutzt KI, um sichtbar zu werden und Content zu erstellen, der nach dir klingt. Deine Stimme bleibt deine. KI hilft dir, sie lauter zu machen.</p>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 15</span> Lass KI aus einer Idee 10 Hooks machen.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Ein Hook ist der erste Satz, der entscheidet, ob jemand weiterliest oder weiterscrollt. KI ist unglaublich gut darin, aus einer Idee viele Varianten zu entwickeln. Du w&auml;hlst dann die beste aus.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Nimm eine Idee, die du f&uuml;r einen Post hast, und sag: &quot;Mach mir 10 verschiedene Hooks f&uuml;r einen Instagram-Post zu diesem Thema: [Thema]. Kurz, knackig, maximal 8 W&ouml;rter.&quot;</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>Thema: &quot;Warum Selbstst&auml;ndige KI brauchen&quot; &rarr; KI liefert u.a.: &quot;Ich hab 3 Stunden f&uuml;r einen Post gebraucht.&quot; / &quot;Dein Content klingt nach KI. Merkst du das?&quot; / &quot;Seit 2 Wochen kein Post? Das &auml;ndert sich heute.&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 16</span> Frag KI nach 3 Reel-Ideen aus deinem Alltag.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Die besten Reels kommen nicht aus einem Content-Plan, sondern aus deinem echten Leben. KI hilft dir, allt&auml;gliche Momente in Content zu verwandeln.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Beschreib KI deinen gestrigen Tag und frag: &quot;Welche 3 Momente daraus k&ouml;nnten ein kurzes Instagram-Reel werden? Denk an: Hinter den Kulissen, &uuml;berraschende Erkenntnisse, und Dinge, die meine Zielgruppe &uuml;berraschen w&uuml;rden.&quot;</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>&quot;Ich habe gestern morgens meinen Tag mit KI geplant, mittags eine Kundin beraten und abends einen Newsletter geschrieben.&quot; &rarr; KI schl&auml;gt vor: &quot;Zeig den Vorher-Nachher deiner Tagesplanung mit KI.&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 17</span> Verwandle eine Sprachnotiz in Content.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Du hast wahrscheinlich schon Content auf deinem Handy, ohne es zu wissen. Jede Sprachnotiz, jede Voice-Message, jeder Gedanke, den du mal eingesprochen hast, kann ein Post werden.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Nimm eine Sprachnotiz auf (oder nutze eine bestehende). Lass sie von KI transkribieren und sag dann: &quot;Mach aus diesem Transkript einen Instagram-Post in meinem Stil. Warm, nahbar, mit einem konkreten Tipp.&quot;</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>Deine Sprachnotiz: &quot;Also ich hab heute gemerkt, dass ich viel zu viel Zeit mit E-Mails verbringe und eigentlich k&ouml;nnte KI mir da total helfen...&quot; &rarr; KI macht daraus einen fertigen Post.</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 18</span> Erstelle deinen ersten KI-Mitarbeiter.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Ein KI-Mitarbeiter ist wie ein digitaler Assistent, der genau wei&szlig;, wer du bist und wie du sprichst. Du sagst ihm einmal, worauf es ankommt, und er liefert ab sofort bessere Ergebnisse. Du gibst die Richtung vor, er &uuml;bernimmt die Ausf&uuml;hrung.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>1. &Ouml;ffne ChatGPT oder Claude. 2. Schreib eine kurze Beschreibung von dir: Wer bist du? Was machst du? Wer ist deine Zielgruppe? Wie sprichst du? 3. Sag: &quot;Ab jetzt bist du mein Content-Assistent. Du kennst mich, meine Zielgruppe und meinen Stil.&quot; 4. Teste es mit einem Thema.</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>&quot;Ich bin Heilpraktikerin und helfe Frauen bei Hormonst&ouml;rungen. Meine Zielgruppe sind Frauen zwischen 30 und 50. Ich spreche warm, direkt und ohne Fachjargon. Erstelle mir einen Instagram-Post zum Thema Schlafprobleme.&quot;</p></div>
+      <div class="day-wichtig"><div class="day-wichtig-label">Wichtig</div><p>Deine Stimme bleibt deine. Der KI-Mitarbeiter ist wie ein Texter, der einen Entwurf liefert. Du entscheidest, was bleibt und was sich noch nicht nach dir anf&uuml;hlt.</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 19</span> Frag KI: &quot;Was macht mich besonders?&quot;</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Positionierung ist das, woran die meisten Selbstst&auml;ndigen scheitern. Sie wissen, was sie tun, aber nicht warum jemand ausgerechnet zu ihnen kommen sollte. KI kann dir einen Spiegel vorhalten.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Beschreib KI ausf&uuml;hrlich, was du machst, f&uuml;r wen, und was du anders machst als andere. Dann frag: &quot;Was w&uuml;rdest du sagen, macht mich besonders? Was ist mein Alleinstellungsmerkmal?&quot;</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>&quot;Ich bin Grafikdesignerin und spezialisiert auf Branding f&uuml;r Coaches. Ich arbeite nur mit Frauen, die gerade gr&uuml;nden. Was unterscheidet mich von anderen Designern?&quot; &rarr; KI spiegelt dir zur&uuml;ck, was auff&auml;llt.</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 20</span> Lass KI deine Zielgruppe beschreiben.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Je genauer du wei&szlig;t, f&uuml;r wen du Content machst, desto besser trifft er. KI kann dir helfen, ein konkretes Bild deiner Wunschkundin zu zeichnen.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Sag KI: &quot;Beschreibe mir meine ideale Kundin. Sie ist [Alter], [Beruf], [Situation]. Was sind ihre gr&ouml;&szlig;ten &Auml;ngste? Was w&uuml;nscht sie sich? Was w&uuml;rde sie nachts googeln?&quot;</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>&quot;Meine Kundin ist 42, Yoga-Lehrerin, will online sichtbar werden, hat aber Angst vor Technik.&quot; &rarr; KI erstellt ein detailliertes Profil mit Sprache, Bed&uuml;rfnissen und Einw&auml;nden.</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 21</span> Poste heute etwas Unperfektes.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Perfektionismus ist der gr&ouml;&szlig;te Sichtbarkeits-Killer. Heute &uuml;bst du, etwas zu ver&ouml;ffentlichen, das nicht perfekt ist. Weil deine Community echte Menschen will, keine polierten Hochglanz-Versionen.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Nimm ein Handyfoto, schreib 3 ehrliche S&auml;tze dazu, und poste es. Kein Filter, kein perfektes Licht, keine Stunde an der Caption feilen. Einfach raus damit.</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>Ein Foto von deinem Schreibtisch mit dem Text: &quot;So sieht mein Arbeitsplatz gerade wirklich aus. Zwischen Kaffeetasse und drei offenen Tabs. Content entsteht auch im Chaos.&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+  </section>
+
+  <!-- WOCHE 4 -->
+  <section class="week">
+    <div class="week-bar week-bar--w4"></div>
+    <h2>Woche 4: KI bewusst &amp; strategisch nutzen</h2>
+    <p class="week-intro">Diese Woche baust du dir eine nachhaltige Routine auf. Es geht nicht darum, mehr KI zu nutzen, sondern kl&uuml;ger.</p>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 22</span> Automatisiere heute eine kleine nervige Aufgabe.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Es gibt Aufgaben, die jede Woche wiederkommen und dich nerven. Genau die sind perfekt f&uuml;r KI. Wenn du eine davon automatisierst, sparst du jede Woche Zeit.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Welche Aufgabe machst du jede Woche, die dich nervt? Frag KI: &quot;Ich mache jede Woche [Aufgabe]. Wie kann ich das mit KI schneller oder einfacher machen?&quot;</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>&quot;Ich schreibe jede Woche eine Zusammenfassung f&uuml;r mein Team. Kann ich dir die Stichpunkte geben und du machst daraus einen fertigen Text?&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 23</span> Schreibe auf: &quot;Was soll KI niemals f&uuml;r mich ersetzen?&quot;</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>KI kann vieles. Aber nicht alles sollte sie &uuml;bernehmen. Heute wirst du dir bewusst, wo deine Grenzen sind. Das sch&uuml;tzt dich davor, dich selbst in deinem Business &uuml;berfl&uuml;ssig zu machen.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Nimm dir 5 Minuten und schreib eine Liste: &quot;Das bleibt bei mir.&quot; Pers&ouml;nliche Kundengespr&auml;che? Kreative Entscheidungen? Deine Stimme in Stories?</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>&quot;KI darf nie: Kundengespr&auml;che f&uuml;hren, meine pers&ouml;nliche Meinung formulieren, Preise verhandeln, meine Stories aufnehmen.&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 24</span> Nutze heute bewusst weniger Tools.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Mehr Tools bedeuten nicht mehr Produktivit&auml;t. Heute testest du, wie es sich anf&uuml;hlt, mit nur einem einzigen KI-Tool durch den Tag zu kommen.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>W&auml;hle dein Lieblings-KI-Tool und nutze heute nur dieses eine. F&uuml;r alles: Texte, Ideen, Planung, Zusammenfassungen. Am Ende des Tages wei&szlig;t du, ob du wirklich mehr brauchst.</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>Nur Claude f&uuml;r alles: Morgens Tagesplan, mittags E-Mail formulieren, nachmittags Content-Ideen, abends Reflexion.</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 25</span> Lass KI deinen Tagesplan vereinfachen.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Die meisten Tagespl&auml;ne sind zu voll. KI kann dir helfen, realistisch zu planen und Puffer einzubauen.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Gib KI deine geplanten Aufgaben und sag: &quot;Ich habe 6 Stunden Arbeitszeit. Erstelle mir einen realistischen Tagesplan mit Pausen. Sag mir ehrlich, wenn ich mir zu viel vornehme.&quot;</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>KI streicht 2 von 8 Aufgaben und sagt: &quot;Diese beiden k&ouml;nnen auf morgen warten. Heute schaffst du die 6 wichtigsten, wenn du um 9 Uhr startest und eine Mittagspause von 30 Minuten einplanst.&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 26</span> Erstelle deine pers&ouml;nliche KI-Routine.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Bis jetzt hast du experimentiert. Heute baust du dir eine feste Routine. So wird KI zum nat&uuml;rlichen Teil deines Alltags, nicht zum Extra-To-Do.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Frag dich: Wann am Tag hilft mir KI am meisten? Schreib dir 3 feste Momente auf. Zum Beispiel: Morgens Tagesplanung, mittags Content-Idee, abends Reflexion.</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>&quot;Meine KI-Routine: 8:00 Tagesplan mit KI (5 Min), 12:00 eine Content-Idee generieren (5 Min), 17:00 Tag zusammenfassen und morgen planen (5 Min).&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 27</span> Frag KI: &quot;Wie kann ich klarer denken?&quot;</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>KI ist nicht nur ein Produktivit&auml;ts-Tool. Sie kann dir auch helfen, deine eigenen Gedanken zu sortieren und neue Perspektiven zu finden.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Beschreib KI eine Entscheidung, die dich gerade besch&auml;ftigt. Bitte sie: &quot;Stell mir 5 Fragen, die mir helfen, klarer zu sehen.&quot; Beantworte die Fragen und schau, was passiert.</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>&quot;Ich &uuml;berlege, ob ich einen Online-Kurs erstellen soll. Stell mir 5 Fragen, die mir bei der Entscheidung helfen.&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 28</span> Schaffe dir heute 30 Minuten Freiraum.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Wenn KI dir Arbeit abnimmt, sollte das nicht dazu f&uuml;hren, dass du noch mehr arbeitest. Heute nutzt du die gesparte Zeit bewusst f&uuml;r dich.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>&Uuml;berleg dir: Welche Aufgabe hat KI dir diese Woche abgenommen? Nimm dir genau diese gesparte Zeit und mach etwas, das nichts mit Arbeit zu tun hat. Spaziergang, Buch, Kaffee in Ruhe.</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>&quot;KI hat mir heute 30 Minuten bei der Content-Planung gespart. Die nutze ich jetzt f&uuml;r einen Spaziergang.&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+  </section>
+
+  <!-- BONUS -->
+  <section class="week">
+    <div class="week-bar week-bar--bonus"></div>
+    <h2>Bonus: Dein R&uuml;ckblick</h2>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 29</span> Dokumentiere deinen gr&ouml;&szlig;ten KI-Moment.</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>In 29 Tagen ist viel passiert. Heute h&auml;ltst du den Moment fest, der dich am meisten &uuml;berrascht hat. Das ist dein pers&ouml;nlicher Beweis, dass KI einen Unterschied macht.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Schau zur&uuml;ck: Welcher Tag war dein pers&ouml;nlicher Durchbruch? Wann hat KI dich am meisten &uuml;berrascht? Schreib es auf. Wenn du mutig bist: Poste es.</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>&quot;Mein gr&ouml;&szlig;ter KI-Moment: An Tag 17 habe ich eine Sprachnotiz in einen Instagram-Post verwandelt. Das hat 3 Minuten gedauert. Fr&uuml;her sa&szlig; ich eine Stunde daran.&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+
+    <div class="day">
+      <div class="day-title"><span class="tag-num">Tag 30</span> Schreibe auf: &quot;Wie hat KI meinen Alltag ver&auml;ndert?&quot;</div>
+      <div class="day-section"><div class="day-section-label">Warum</div><p>Das ist kein Ende, sondern der Anfang. Du hast in 30 Tagen gelernt, wie KI dich im Alltag unterst&uuml;tzen kann. Jetzt wei&szlig;t du, was funktioniert und was nicht. Das ist Gold wert.</p></div>
+      <div class="day-section"><div class="day-section-label">So gehts</div><p>Nimm dir 5 Minuten und schreib drei S&auml;tze: 1. &quot;Vor 30 Tagen dachte ich &uuml;ber KI: ...&quot; 2. &quot;Heute denke ich: ...&quot; 3. &quot;Ab jetzt werde ich KI f&uuml;r ... nutzen.&quot;</p></div>
+      <div class="day-beispiel"><div class="day-beispiel-label">Beispiel</div><p>&quot;Vor 30 Tagen dachte ich: KI ist was f&uuml;r Technik-Nerds. Heute denke ich: KI ist mein stiller Assistent f&uuml;r alles, was ich nicht gerne mache. Ab jetzt nutze ich KI f&uuml;r: Tagesplanung, Content-Ideen und E-Mails.&quot;</p></div>
+      <hr class="day-sep">
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing">
+    <h2>Du hast es geschafft.</h2>
+    <p>30 Tage. 5 Minuten am Tag. Und du nutzt KI jetzt bewusster als die meisten Menschen da drau&szlig;en.</p>
+    <p>Du brauchst kein perfektes System. Du brauchst nur die Bereitschaft, jeden Tag einen kleinen Schritt zu machen. Und das hast du gerade bewiesen.</p>
+    <p>Wenn du jetzt tiefer einsteigen willst und lernen m&ouml;chtest, wie du ein ganzes KI-Team aufbaust, das in deiner Stimme arbeitet: Folge mir auf Instagram <a href="https://instagram.com/maikeneuheisel" target="_blank" rel="noopener">@maikeneuheisel</a>.</p>
+    <p>Deine Stimme bleibt deine. KI hilft dir, sie lauter zu machen.</p>
+    <div class="closing-accent"></div>
+    <div class="closing-name">Maike Neuheisel</div>
+    <div class="closing-handle"><a href="https://instagram.com/maikeneuheisel" target="_blank" rel="noopener">@maikeneuheisel</a></div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="container">
+    <a href="impressum.html">Impressum</a>
+    <span class="sep">|</span>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
+
+</body>
+</html>
